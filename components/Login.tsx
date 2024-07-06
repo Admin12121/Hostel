@@ -166,7 +166,6 @@ export default function LoginTab() {
             <Tab key="login" title="Login">
               <form className="flex flex-col gap-4" onSubmit={handleLoginSubmit(onLoginSubmit)}>
                 <Input 
-                  autoFocus 
                   label="Email" 
                   isInvalid={!!loginErrors.email} 
                   isRequired 
@@ -214,7 +213,6 @@ export default function LoginTab() {
                   <Input 
                     type="text" 
                     isRequired 
-                    autoFocus 
                     label="First Name" 
                     isInvalid={!!signUpErrors.fname} 
                     {...signUpRegister('fname', { 
