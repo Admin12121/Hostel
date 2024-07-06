@@ -1,10 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useRouter } from "next/navigation";
 import { Spinner } from "@nextui-org/react";
 import { Card, CardBody, Image, Divider } from "@nextui-org/react";
-import { Avatar, AvatarIcon } from "@nextui-org/react";
 
 interface User {
   _id: string;
@@ -19,9 +17,9 @@ interface User {
   __v: number;
 }
 
-const page = ({ params }: { params: { user: string } }) => {
-  const route = useRouter();
-  const [isLoading, setIsLoading] = React.useState(true);
+const Page = ({ params }: { params: { user: string } }) => {
+
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [users, setUser] = useState<User>();
 
   const getUserDetails = async () => {
@@ -74,4 +72,4 @@ const page = ({ params }: { params: { user: string } }) => {
   );
 };
 
-export default page;
+export default Page;

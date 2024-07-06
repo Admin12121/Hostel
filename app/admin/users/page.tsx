@@ -81,7 +81,7 @@ const signUpSchema = yup.object().shape({
     .required("Confirm password is required"),
 });
 
-const page = () => {
+const Page = () => {
   const route = useRouter();
   const [isLoading, setIsLoading] = React.useState(true);
   const [users, SetUser] = useState<User[]>([]);
@@ -364,4 +364,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
