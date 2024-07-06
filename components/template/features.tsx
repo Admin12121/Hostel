@@ -46,7 +46,7 @@ export default function Features() {
                 </g>
               </svg>
               <h4 className="h4 mb-2">Community Events</h4>
-              <p className="text-lg text-gray-400 text-center"> Participate in our exciting events and activities designed to bring travelers together. From movie nights to city tours, there's always something happening.              </p>
+              <p className="text-lg text-gray-400 text-center"> Participate in our exciting events and activities designed to bring travelers together. From movie nights to city tours, there&apos;s always something happening.              </p>
             </div>
 
             {/* 4th item */}

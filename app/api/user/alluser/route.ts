@@ -1,7 +1,7 @@
+import bcrypt from "bcryptjs";
 import { NextRequest, NextResponse } from "next/server";
 import User from "@/models/userModel";
 import { connect } from "@/dbconfig/dnconfig";
-import bcrypt from "bcryptjs";
 
 connect();
 
@@ -13,7 +13,10 @@ export async function GET(request: NextRequest) {
     if (username) {
       const user = await User.findOne({ username }).select("-password");
       if (!user) {
-        return NextResponse.json({ error: "User not found" }, { status: 404 });
+        return NextResponse.json(
+          { error: "User not found" },
+          { status: 404 }
+        );
       }
       return NextResponse.json({ data: user });
     } else {
@@ -37,7 +40,10 @@ export async function DELETE(request: NextRequest) {
     const user = await User.findOne({ _id: id });
 
     if (!user) {
-      return NextResponse.json({ error: "User doesn't exist" }, { status: 404 });
+      return NextResponse.json(
+        { error: "User doesn't exist" },
+        { status: 404 }
+      );
     }
 
     await user.deleteOne();
@@ -63,7 +69,10 @@ export async function PATCH(request: NextRequest) {
     const user = await User.findOne({ _id: id });
 
     if (!user) {
-      return NextResponse.json({ error: "User doesn't exist" }, { status: 404 });
+      return NextResponse.json(
+        { error: "User doesn't exist" },
+        { status: 404 }
+      );
     }
 
     if (fname) user.fname = fname;

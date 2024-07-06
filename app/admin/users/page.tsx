@@ -292,7 +292,6 @@ const Page = () => {
                     <Input
                       type="text"
                       isRequired
-                      autoFocus
                       label="First Name"
                       isInvalid={!!signUpErrors.fname}
                       {...signUpRegister("fname", {
